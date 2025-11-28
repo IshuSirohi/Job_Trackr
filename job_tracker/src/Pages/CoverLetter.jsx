@@ -68,6 +68,7 @@ ${(fullName || "Your Name").toUpperCase()}
 ${email || "your@email.com"}
 ${phone || "Your Phone Number"}
 ${location || "City, Country"}
+[Today's Date]
 
 Dear Hiring Manager,
 
