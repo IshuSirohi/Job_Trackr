@@ -121,7 +121,7 @@ Now generate the final cover letter.
       setLoading(true);
       setResult("");
 
-      const res = await fetch("http://localhost:5000/api/generate-cover", {
+      const res = await fetch("https://job-trackr-api.onrender.com/api/generate-cover", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
