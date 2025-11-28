@@ -1,0 +1,12 @@
+node_modules/
+job_tracker/node_modules/
+server/node_modules/
+
+build/
+dist/
+job_tracker/build/
+server/dist/
+
+.env
+job_tracker/.env
+server/.env
