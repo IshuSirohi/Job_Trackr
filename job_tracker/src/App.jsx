@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
-import AddJob from "./Pages/Addjob";
+import AddJob from "./Pages/AddJob";
 import JobDetails from "./Pages/JobDetails";
 import Register from "./Pages/Register";
 import Analytics from "./Pages/Analytics";
