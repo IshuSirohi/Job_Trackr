@@ -28,7 +28,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <WebView
-        source={{ uri: "https://job-tracker-pi-one.vercel.app/" }}
+        source={{ uri: "https://job-trackr-sand.vercel.app/" }}
         style={{ flex: 1 }}
       />
     </SafeAreaView>
