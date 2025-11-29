@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { jsPDF } from "jspdf";
 
 export default function CoverLetter() {
   const [jobTitle, setJobTitle] = useState("");
@@ -69,6 +70,7 @@ ${email || "your@email.com"}
 ${phone || "Your Phone Number"}
 ${location || "City, Country"}
 [Today's Date]
+
 
 Dear Hiring Manager,
 
@@ -182,19 +184,25 @@ Now generate the final cover letter.
     alert("Saved!");
   };
 
-  const handleDownload = () => {
-    if (!result) return;
+const handleDownloadPDF = () => {
+  if (!result) return;
 
-    const blob = new Blob([result], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
+  const doc = new jsPDF({
+    unit: "pt",
+    format: "a4",
+  });
 
-    a.href = url;
-    a.download = `${jobTitle}-${company}-cover-letter.txt`;
-    a.click();
+  const lines = doc.splitTextToSize(result, 500);
 
-    URL.revokeObjectURL(url);
-  };
+  doc.setFont("Helvetica", "normal");
+  doc.setFontSize(12);
+  doc.text(lines, 50, 50);
+
+  const fileName = `${jobTitle || "cover-letter"}-${company || "company"}.pdf`;
+
+  doc.save(fileName);
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-700 via-indigo-900 to-black p-6">
@@ -354,7 +362,7 @@ Now generate the final cover letter.
     </button> */}
 
     {/* Download */}
-    <button onClick={handleDownload} className="px-3 py-1 bg-white/10 rounded">
+    <button onClick={handleDownloadPDF} className="px-3 py-1 bg-white/10 rounded">
       Download
     </button>
 
