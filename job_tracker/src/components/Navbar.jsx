@@ -81,9 +81,7 @@ import { Menu, X } from "lucide-react";
               </NavLink>
               
             ))}
-             <button className="block w-full text-left px-3 py-2 bg-yellow-400 text-gray-900 rounded-md hover:bg-yellow-300">
-              Logout
-            </button>
+             
            
           </div>
         </div>
